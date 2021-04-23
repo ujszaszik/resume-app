@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="skillData"
+            type="hu.ujszaszik.resumeapp.resume.skills.SkillData" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/defaultCardViewStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/skillImage"
+                android:layout_width="@dimen/default_image_size"
+                android:layout_height="@dimen/match_constraint"
+                android:layout_marginStart="@dimen/margin_big"
+                android:layout_marginTop="@dimen/margin_big"
+                android:layout_marginBottom="@dimen/margin_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:skillImage="@{skillData.image}" />
+
+            <RatingBar
+                android:id="@+id/languageRating"
+                style="@style/ratingBarIndicatorStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/skillImage"
+                app:layout_constraintTop_toBottomOf="@+id/skillDescriptionText"
+                app:skillRating="@{skillData.stars}" />
+
+            <TextView
+                android:id="@+id/quoteDescription"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_big"
+                android:paddingLeft="@dimen/padding_tiny"
+                android:text="@{skillData.title}"
+                android:textColor="@color/headings"
+                android:textSize="@dimen/quote_description_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/skillDescriptionText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/skillImage"
+                app:layout_constraintTop_toTopOf="@+id/skillImage" />
+
+            <TextView
+                android:id="@+id/skillDescriptionText"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_big"
+                android:layout_marginEnd="@dimen/margin_big"
+                android:paddingLeft="@dimen/padding_tiny"
+                android:text="@{skillData.description}"
+                app:layout_constraintBottom_toTopOf="@+id/languageRating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/skillImage"
+                app:layout_constraintTop_toBottomOf="@+id/quoteDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

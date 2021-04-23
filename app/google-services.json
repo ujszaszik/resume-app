@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462336153174",
+    "project_id": "resume-app-144a1",
+    "storage_bucket": "resume-app-144a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462336153174:android:a1ce6369773b56ceaf0df7",
+        "android_client_info": {
+          "package_name": "hu.ujszaszik.resumeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462336153174-jj7f7olprc7e692evd6oa60qiio69nhv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbkCCCcMD4q-Vqb9UwylHtkP1uKqrgkzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462336153174-jj7f7olprc7e692evd6oa60qiio69nhv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

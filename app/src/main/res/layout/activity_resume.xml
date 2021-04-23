@@ -1,0 +1,164 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="hu.ujszaszik.resumeapp.resume.ResumeActivity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="RtlHardcoded">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/resumeHeaderAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/resumeHeaderCollapsingToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                    <LinearLayout
+                        android:id="@+id/resumeHeaderPlaceholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/collapsing_toolbar_placeholder_height"
+                        android:background="@drawable/grad"
+                        android:orientation="horizontal"
+                        android:scaleType="centerCrop" />
+
+                    <FrameLayout
+                        android:id="@+id/resumeHeaderTitleFrame"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/resume_header_height"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/main.linearlayout.title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/resumeHeaderNameText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin_large"
+                                android:gravity="bottom|center"
+                                android:text="@string/developer_name"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/profile_name_text_size" />
+
+                            <TextView
+                                android:id="@+id/resumeHeaderJobText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin_tiny"
+                                android:text="@string/developer_title"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/profile_job_text_size" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/resumeHeaderNestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/resumeHeaderToolbarText"
+                android:scrollbars="none"
+                app:behavior_overlapTop="@dimen/one"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <fragment
+                    android:id="@+id/nav_host_fragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/nav_graph" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/resumeHeaderToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/grad"
+                app:layout_anchor="@id/resumeHeaderTitleFrame"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark"
+                app:title="">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="@dimen/profile_image_width_final"
+                        android:layout_height="@dimen/profile_image_width_final" />
+
+                    <TextView
+                        android:id="@+id/resumeHeaderToolbarText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/developer_name"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/resume_header_toolbar_text_size" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="@dimen/profile_image_width"
+                android:layout_height="@dimen/profile_image_width"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_user"
+                app:border_color="@android:color/white"
+                app:border_width="@dimen/circle_image_view_default_pixel"
+                app:finalHeight="@dimen/profile_image_width_final"
+                app:finalYPosition="@dimen/circle_image_view_default_pixel"
+                app:layout_behavior="hu.ujszaszik.resumeapp.resume.ProfileImageBehavior"
+                app:startHeight="@dimen/circle_image_view_default_pixel"
+                app:startToolbarPosition="@dimen/circle_image_view_default_pixel"
+                app:startXPosition="@dimen/circle_image_view_default_pixel" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:id="@+id/tooltipPlaceHolder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one"
+            android:layout_marginBottom="54dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/resumeHeaderBottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navigation_view_height"
+            android:background="@color/colorPrimary"
+            app:itemBackground="?attr/colorPrimary"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:labelVisibilityMode="labeled"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

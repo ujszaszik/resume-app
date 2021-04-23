@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="one">1</integer>
+    <integer name="button_animation_duration">1500</integer>
+    <integer name="delay_before_quit">1000</integer>
+    <integer name="error_animation_duration">500</integer>
+    <integer name="error_stroke_width">6</integer>
+    <integer name="password_min_length">6</integer>
+</resources>

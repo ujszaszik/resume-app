@@ -1,0 +1,95 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Resume App</string>
+    <string name="package_declaration">package:hu.ujszaszik.resumeapp</string>
+    <string name="app_link">github.com/ujszaszik/resume-app</string>
+
+    <!--    DEVELOPER -->
+    <string name="developer_name">Károly Ujszászi</string>
+    <string name="developer_title">Android Developer</string>
+    <string name="developer_title_both">Android and Backend Developer</string>
+    <string name="developer_title_java">Java Backend Developer</string>
+
+    <!--    MENU -->
+    <string name="menu_title_overview">Overview</string>
+    <string name="menu_title_projects">Projects</string>
+    <string name="menu_title_skills">Skills</string>
+    <string name="menu_title_personal">Personal</string>
+
+    <!--    OVERVIEW -->
+    <string name="overview_label_email">Email</string>
+    <string name="overview_label_phone">Phone</string>
+    <string name="overview_label_repo">GitHub</string>
+    <string name="overview_label_social">Facebook</string>
+    <string name="profile_label_quotes">Quotes</string>
+    <string name="profile_label_personality">Personality</string>
+    <string name="profile_label_languages">Languages</string>
+
+
+    <!--    HINT -->
+    <string name="hint_email"><font size="36">Email</font></string>
+    <string name="hint_password"><font size="36">Password</font></string>
+    <string name="hint_password_again"><font size="36">Password Again</font></string>
+    <string name="ask_for_credentials"><u>Ask for credentials</u></string>
+
+
+    <!--    LOGIN-->
+    <string name="login_button_label_authenticate">LOG IN</string>
+    <string name="login_error_application_closing">Too many wrong attempts! </string>
+    <string name="login_error_empty">This field is mandatory</string>
+    <string name="login_error_failed_to_register">Failed to register new user!</string>
+    <string name="login_error_invalid_email">Please enter valid email!</string>
+    <string name="login_error_invalid_password">Password must be at least 6 characters length</string>
+    <string name="login_error_invalid_credentials">The entered credentials are invalid!\n Attempts remaining: %1$d</string>
+    <string name="login_error_registered_login_failed">Failed to log in with new user!</string>
+    <string name="login_error_user_is_not_verified">This account is not verified!</string>
+    <string name="login_error_user_is_deleted">Your account has been deleted!</string>
+    <string name="login_sign_in">Sign In</string>
+
+
+    <!--    REGISTER-->
+    <string name="register_button_label_back_to_login_page">BACK TO LOGIN PAGE</string>
+    <string name="register_error_already_registered">This user is already registered!</string>
+    <string name="register_error_empty_email">Please enter your e-mail address!</string>
+    <string name="register_error_empty_password">Please enter your password!</string>
+    <string name="register_error_empty_password_again">Please enter your password again!</string>
+    <string name="register_error_empty_role">Please select a role!</string>
+    <string name="register_error_invalid_email">Please enter a valid e-mail address!</string>
+    <string name="register_error_passwords_not_match">Your passwords do not match!</string>
+    <string name="register_label_register">Register</string>
+    <string name="register_label_select_role" tools:ignore="TypographyEllipsis">Select role...</string>
+    <string name="register_label_send_request">CREATE ACCOUNT</string>
+    <string name="register_successful_registration">Successful registration!</string>
+
+
+    <!--    VERIFICATION -->
+    <string name="verification_error_verification_failed">Verification process has failed!</string>
+    <string name="verification_mail_sent"><b>A verification mail</b> \nhas been sent to your address</string>
+
+
+    <!--    ACTIONS -->
+    <string name="action_send_email">E-mail</string>
+    <string name="action_phone_call">Phone</string>
+    <string name="action_github_open">GitHub</string>
+    <string name="action_linked_in_open">LinkedIn</string>
+
+    <!--    CONTACT MAIL PARAMETERS -->
+    <string name="contact_mail_subject">Contact via Resume App</string>
+    <string name="contact_mail_greeting">Dear Karoly, \n\n</string>
+
+    <!--    ROLE TYPE SPINNER -->
+    <string name="role_type_select">Select a role</string>
+    <string name="role_type_hr">Human Resources</string>
+    <string name="role_type_tech_lead">Tech/Project Lead</string>
+    <string name="role_type_developer">Software Developer</string>
+    <string name="role_type_inquirer">Inquirer</string>
+    <string name="label_user_role">User Role</string>
+
+    <!--   WELCOME EMAIL -->
+    <string name="intent_extra_new_email">newEmail</string>
+    <string name="mail_to_me_subject">New registration</string>
+    <string name="mail_to_me_body">New registration for Resume App: \n\nE-mail: %1$s \n\nRole: %2$s \n\nRegistration Time: %3$s.</string>
+    <string name="welcome_mail_subject">Welcome to my Resume App</string>
+    <string name="welcome_mail_body">Welcome,  %s! \n\nThank you for downloading my Resume App!\n\nI hope you will find every information you need, and enjoy using my application.\n\nIf you have any questions or ideas about the app, feel free to contact me!\n\nBest regards,\nKároly Ujszászi</string>
+    <string name="label_check_this_project"><u>Check the source code of this project</u></string>
+
+</resources>

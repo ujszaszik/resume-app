@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_default"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context="hu.ujszaszik.resumeapp.verification.VerificationActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/verificationSentAnimation"
+            android:layout_width="@dimen/verification_animation_size"
+            android:layout_height="@dimen/verification_animation_size"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/verification_sent" />
+
+        <TextView
+            android:id="@+id/verificationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_default"
+            android:text="@string/verification_mail_sent"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/verification_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backToMainPageButton"
+            android:layout_width="@dimen/verification_button_width"
+            android:layout_height="@dimen/verification_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_extra"
+            android:background="@drawable/grad_button"
+            android:text="@string/register_button_label_back_to_login_page"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+</layout>

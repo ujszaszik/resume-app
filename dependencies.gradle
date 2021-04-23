@@ -1,0 +1,75 @@
+ext {
+    apply from: 'versions.gradle'
+
+    kotlinLibs = [
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin",
+            serialization: "org.jetbrains.kotlinx:kotlinx-serialization-json:$version_kotlin_serialization"
+    ]
+
+    androidCoreLibs = [
+            appCompat         : "androidx.appcompat:appcompat:$version_app_compat",
+            core              : "androidx.core:core-ktx:$version_android_core",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$version_constraint_layout",
+            legacySupport     : "androidx.legacy:legacy-support-v4:$version_legacy_support",
+            lifecycleViewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle",
+            material          : "com.google.android.material:material:$version_material"
+    ]
+
+    navigationLibs = [
+            fragment: "androidx.navigation:navigation-fragment-ktx:$version_navigation",
+            ui      : "androidx.navigation:navigation-ui-ktx:$version_navigation"
+    ]
+
+    externalLibs = [
+            circleImageView: "de.hdodenhof:circleimageview:$version_circle_image_view"
+    ]
+
+    dataStoreLibs = [
+            dataStore  : "androidx.datastore:datastore-preferences:$version_data_store",
+            dataStoreRx: "androidx.datastore:datastore-rxjava3:$version_data_store"
+    ]
+
+    daggerLibs = [
+            dagger        : "com.google.dagger:dagger:$version_dagger",
+            android       : "com.google.dagger:dagger-android:$version_dagger",
+            androidSupport: "com.google.dagger:dagger-android-support:$version_dagger"
+    ]
+
+    daggerKaptLibs = [
+            dagger        : "com.google.dagger:dagger-compiler:$version_dagger",
+            android       : "com.google.dagger:dagger-android-processor:$version_dagger",
+            androidSupport: "com.google.dagger:dagger-compiler:$version_dagger"
+    ]
+
+    firebaseLibs = [
+            firebaseAnalytics  : 'com.google.firebase:firebase-analytics-ktx',
+            firebaseAuth       : 'com.google.firebase:firebase-auth-ktx',
+            firebaseCrashlytics: 'com.google.firebase:firebase-crashlytics-ktx',
+            firebaseKtx        : "com.google.firebase:firebase-database-ktx:$version_firebase_ktx",
+            firebaseStorage    : 'com.google.firebase:firebase-storage-ktx'
+    ]
+
+    javaMailLibs = [
+            mail          : "com.sun.mail:android-mail:$version_java_mail",
+            mailActivation: "com.sun.mail:android-activation:$version_java_mail"
+    ]
+
+    rxLibs = [
+            rxJava   : "io.reactivex.rxjava3:rxjava:$version_rx",
+            rxAndroid: "io.reactivex.rxjava3:rxandroid:$version_rx"
+    ]
+
+    uiLibs = [
+            balloon: "com.github.skydoves:balloon:$version_balloon",
+            lottie : "com.airbnb.android:lottie:$version_lottie"
+    ]
+
+    testLibs = [
+            jUnit: "junit:junit:$version_junit_test",
+    ]
+
+    androidTestLibs = [
+            jUnit   : "androidx.test.ext:junit:$version_junit_androidTest",
+            espresso: "androidx.test.espresso:espresso-core:$version_espresso"
+    ]
+}

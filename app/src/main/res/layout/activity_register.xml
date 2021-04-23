@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/registerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/login_margin_top"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/registerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/placeHolder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_placeholder_height"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/registerFieldsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/login_view_margin">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    style="@style/signInTitleTextStyle"
+                    android:text="@string/register_label_register" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputEmail"
+                    style="@style/loginFieldTextInputLayoutStyle"
+                    android:layout_marginTop="@dimen/login_placeholder_height">
+
+                    <EditText
+                        android:id="@+id/editTextEmail"
+                        style="@style/loginInputTextStyle"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/hint_email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="@integer/one" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputPassword"
+                    style="@style/loginFieldTextInputLayoutStyle"
+                    android:layout_marginTop="@dimen/margin_default"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/editTextPassword"
+                        style="@style/loginInputTextStyle"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword"
+                        android:maxLines="@integer/one" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputPasswordAgain"
+                    style="@style/loginFieldTextInputLayoutStyle"
+                    android:layout_marginTop="@dimen/margin_default"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/editTextPasswordAgain"
+                        style="@style/loginInputTextStyle"
+                        android:hint="@string/hint_password_again"
+                        android:inputType="textPassword"
+                        android:maxLines="@integer/one" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/roleSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spinner_height"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:background="@drawable/input_background"
+                    android:popupBackground="@drawable/blue_outline"
+                    android:spinnerMode="dropdown" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/registerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/login_button_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_extra"
+                    android:background="@drawable/grad_button"
+                    android:text="@string/register_label_send_request"
+                    app:backgroundTint="@null" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/progress_bar_size"
+                    android:layout_height="@dimen/progress_bar_size"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/progress_bar_size"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/errorTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/default_text_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

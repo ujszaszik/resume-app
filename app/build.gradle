@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlinx-serialization'
+}
+
+android {
+    signingConfigs {
+        ReleaseSignConfig {}
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "hu.ujszaszik.resumeapp"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ReleaseSignConfig
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs = ["-Xinline-classes"]
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt'
+    }
+}
+
+allprojects {
+    afterEvaluate { loadKeyStoreProperties(android) }
+}
+
+dependencies {
+
+    implementation kotlinLibs.values()
+    implementation androidCoreLibs.values()
+    implementation navigationLibs.values()
+    implementation externalLibs.values()
+
+    implementation daggerLibs.values()
+    kapt daggerKaptLibs.values()
+
+    implementation firebaseLibs.values()
+    implementation platform("com.google.firebase:firebase-bom:$version_firebase")
+
+    implementation dataStoreLibs.values()
+    implementation javaMailLibs.values()
+    implementation rxLibs.values()
+    implementation uiLibs.values()
+
+    testImplementation testLibs.values()
+    androidTestImplementation androidTestLibs.values()
+}
