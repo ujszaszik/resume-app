@@ -56,6 +56,13 @@ allprojects {
     afterEvaluate { loadKeyStoreProperties(android) }
 }
 
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = "resume-app-${variant.buildType.name}-${variant.versionName}.apk"
+        println(outputFileName)
+    }
+}
+
 dependencies {
 
     implementation kotlinLibs.values()
