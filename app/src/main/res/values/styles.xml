@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--    DEFAULT -->
+
+    <style name="defaultButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_button_height</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/margin_extra</item>
+        <item name="android:background">@drawable/grad_button</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
     <style name="defaultCardViewStyle" parent="CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -9,14 +20,85 @@
         <item name="cardElevation">@dimen/card_view_card_elevation</item>
     </style>
 
-    <style name="overviewLayoutStyle">
+    <style name="defaultProgressBarStyle">
+        <item name="android:layout_width">@dimen/progress_bar_size</item>
+        <item name="android:layout_height">@dimen/progress_bar_size</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+
+    <!--    AUTO COMPLETE -->
+
+    <style name="autoCompleteLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_height">@dimen/auto_complete_layout_height</item>
+        <item name="android:layout_width">@dimen/match_constraint</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+    <style name="autoCompleteRowTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/match_constraint</item>
+        <item name="android:layout_marginStart">@dimen/margin_extended</item>
+        <item name="android:layout_marginEnd">@dimen/margin_extended</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/highlighted_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="autoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">@dimen/auto_complete_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">@dimen/auto_complete_bottom_margin</item>
+        <item name="android:dropDownHeight">wrap_content</item>
+        <item name="android:paddingStart">@dimen/padding_large</item>
+        <item name="android:paddingEnd">@dimen/padding_large</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/highlighted_text_size</item>
+    </style>
+
+
+    <!--    LOGIN -->
+
+    <style name="loginFieldTextInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_field_layout_height</item>
+        <item name="android:textColorHint">@color/edit_text_hint_selector</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/login_field_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/login_field_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/login_field_corner_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/login_field_corner_radius</item>
+        <item name="boxStrokeWidth">@dimen/zero</item>
+        <item name="boxStrokeWidthFocused">@dimen/zero</item>
+        <item name="errorEnabled">true</item>
+        <item name="hintTextColor">@color/edit_text_hint_selector</item>
+        <item name="startIconTint">@color/colorAccent</item>
+    </style>
+
+    <style name="loginInputTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_field_layout_height</item>
+        <item name="android:background">@drawable/input_background</item>
+        <item name="android:paddingStart">@dimen/login_text_padding</item>
+        <item name="android:paddingEnd">@dimen/login_text_padding</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/input_text_size</item>
+    </style>
+
+    <style name="loginTitleTextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/overview_layout_horizontal_margin</item>
-        <item name="android:layout_marginTop">@dimen/overview_layout_top_margin</item>
-        <item name="android:layout_marginEnd">@dimen/overview_layout_horizontal_margin</item>
-        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginStart">@dimen/margin_tiny</item>
+        <item name="android:layout_marginEnd">@dimen/margin_tiny</item>
+        <item name="android:layout_marginTop">@dimen/login_view_margin</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/big_header_text_size</item>
+        <item name="android:textStyle">bold</item>
     </style>
+
+
+    <!--    OVERVIEW -->
 
     <style name="overviewDelimiterStyle">
         <item name="android:layout_width">match_parent</item>
@@ -32,6 +114,15 @@
         <item name="android:textSize">@dimen/overview_key_text_size</item>
     </style>
 
+    <style name="overviewLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/overview_layout_horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/overview_layout_top_margin</item>
+        <item name="android:layout_marginEnd">@dimen/overview_layout_horizontal_margin</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="overviewValueStyle">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:layout_height">wrap_content</item>
@@ -39,6 +130,9 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/overview_value_text_size</item>
     </style>
+
+
+    <!--    PROFILE -->
 
     <style name="profileTitleTextStyle">
         <item name="android:layout_width">wrap_content</item>
@@ -51,6 +145,9 @@
         <item name="android:textSize">@dimen/default_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+
+    <!--    RATING BAR -->
 
     <style name="ratingBarIndicatorStyle" parent="Widget.AppCompat.RatingBar.Indicator">
         <item name="android:layout_width">wrap_content</item>
@@ -80,69 +177,16 @@
         <item name="android:transformPivotY">@dimen/zero</item>
     </style>
 
-    <style name="autoCompleteLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:layout_height">@dimen/auto_complete_layout_height</item>
-        <item name="android:layout_width">@dimen/match_constraint</item>
-        <item name="android:textColorHint">@color/grey</item>
-    </style>
+    <!--    TEXT STYLE -->
 
-    <style name="autoCompleteRowTextStyle" parent="Widget.MaterialComponents.TextView">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">@dimen/match_constraint</item>
-        <item name="android:layout_marginStart">@dimen/margin_extended</item>
-        <item name="android:layout_marginEnd">@dimen/margin_extended</item>
-        <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/highlighted_text_size</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="autoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextView">
-        <item name="android:layout_height">@dimen/auto_complete_height</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_marginBottom">@dimen/auto_complete_bottom_margin</item>
-        <item name="android:dropDownHeight">wrap_content</item>
-        <item name="android:paddingStart">@dimen/padding_large</item>
-        <item name="android:paddingEnd">@dimen/padding_large</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/highlighted_text_size</item>
-    </style>
-
-    <style name="signInTitleTextStyle">
+    <style name="linkTextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/margin_tiny</item>
-        <item name="android:layout_marginEnd">@dimen/margin_tiny</item>
-        <item name="android:layout_marginTop">@dimen/login_view_margin</item>
-        <item name="android:textAlignment">viewStart</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:textSize">@dimen/big_header_text_size</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/margin_large</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/blue_link</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
     </style>
 
-    <style name="loginFieldTextInputLayoutStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/login_field_layout_height</item>
-        <item name="android:textColorHint">@color/edit_text_hint_selector</item>
-        <item name="boxBackgroundColor">@android:color/transparent</item>
-        <item name="boxCornerRadiusBottomEnd">@dimen/login_field_corner_radius</item>
-        <item name="boxCornerRadiusBottomStart">@dimen/login_field_corner_radius</item>
-        <item name="boxCornerRadiusTopEnd">@dimen/login_field_corner_radius</item>
-        <item name="boxCornerRadiusTopStart">@dimen/login_field_corner_radius</item>
-        <item name="boxStrokeWidth">@dimen/zero</item>
-        <item name="boxStrokeWidthFocused">@dimen/zero</item>
-        <item name="errorEnabled">true</item>
-        <item name="hintTextColor">@color/edit_text_hint_selector</item>
-        <item name="startIconTint">@color/colorAccent</item>
-    </style>
-
-    <style name="loginInputTextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/login_field_layout_height</item>
-        <item name="android:background">@drawable/input_background</item>
-        <item name="android:paddingStart">@dimen/login_text_padding</item>
-        <item name="android:paddingEnd">@dimen/login_text_padding</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:textSize">@dimen/input_text_size</item>
-    </style>
 
 </resources>

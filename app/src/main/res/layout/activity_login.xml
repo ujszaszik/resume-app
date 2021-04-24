@@ -42,7 +42,7 @@
 
                     <TextView
                         android:id="@+id/titleTextView"
-                        style="@style/signInTitleTextStyle"
+                        style="@style/loginTitleTextStyle"
                         android:text="@string/login_sign_in" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -78,29 +78,17 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/loginButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/login_button_height"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/margin_extra"
-                        android:background="@drawable/grad_button"
-                        android:text="@string/login_button_label_authenticate"
-                        app:backgroundTint="@null" />
+                        style="@style/defaultButtonStyle"
+                        android:text="@string/login_button_label_authenticate" />
 
                     <TextView
                         android:id="@+id/registerText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_large"
-                        android:text="@string/ask_for_credentials"
-                        android:textAlignment="center"
-                        android:textColor="@color/blue_link"
-                        android:textSize="@dimen/normal_text_size" />
+                        style="@style/linkTextStyle"
+                        android:text="@string/ask_for_credentials" />
 
                     <ProgressBar
                         android:id="@+id/progressBar"
-                        android:layout_width="@dimen/progress_bar_size"
-                        android:layout_height="@dimen/progress_bar_size"
-                        android:layout_gravity="center"
+                        style="@style/defaultProgressBarStyle"
                         android:layout_marginTop="@dimen/progress_bar_size"
                         android:visibility="invisible" />
 

@@ -32,7 +32,7 @@
 
                 <TextView
                     android:id="@+id/titleTextView"
-                    style="@style/signInTitleTextStyle"
+                    style="@style/loginTitleTextStyle"
                     android:text="@string/register_label_register" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -90,19 +90,13 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/registerButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/login_button_height"
-                    android:layout_gravity="center_horizontal"
+                    style="@style/defaultButtonStyle"
                     android:layout_marginTop="@dimen/margin_extra"
-                    android:background="@drawable/grad_button"
-                    android:text="@string/register_label_send_request"
-                    app:backgroundTint="@null" />
+                    android:text="@string/register_label_send_request" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
-                    android:layout_width="@dimen/progress_bar_size"
-                    android:layout_height="@dimen/progress_bar_size"
-                    android:layout_gravity="center"
+                    style="@style/defaultProgressBarStyle"
                     android:layout_marginTop="@dimen/progress_bar_size"
                     android:visibility="invisible" />
 

@@ -44,15 +44,11 @@
 
         <TextView
             android:id="@+id/sourceCodeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/linkTextStyle"
             android:layout_marginTop="@dimen/overview_layout_top_margin"
             android:layout_marginBottom="@dimen/overview_layout_top_margin"
             android:onClick="@{() -> onClickListener.onClick()}"
             android:text="@string/label_check_this_project"
-            android:textAlignment="center"
-            android:textColor="@color/blue_link"
-            android:textSize="@dimen/normal_text_size"
             app:isTextVisible="@{!isLoading}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

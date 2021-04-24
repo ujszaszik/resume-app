@@ -30,13 +30,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backToMainPageButton"
+            style="@style/defaultButtonStyle"
             android:layout_width="@dimen/verification_button_width"
             android:layout_height="@dimen/verification_button_height"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/margin_extra"
-            android:background="@drawable/grad_button"
-            android:text="@string/register_button_label_back_to_login_page"
-            app:backgroundTint="@null" />
+            android:text="@string/register_button_label_back_to_login_page" />
 
     </LinearLayout>
 </layout>
