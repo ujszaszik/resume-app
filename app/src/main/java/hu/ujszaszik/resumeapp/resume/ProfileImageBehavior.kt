@@ -1,18 +1,16 @@
 package hu.ujszaszik.resumeapp.resume
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.View
-import android.widget.LinearLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.ujszaszik.resumeapp.R
 import de.hdodenhof.circleimageview.CircleImageView
 import hu.ujszaszik.resumeapp.extensions.*
+import kotlin.math.min
 
 
 class ProfileImageBehavior constructor(
@@ -41,6 +39,8 @@ class ProfileImageBehavior constructor(
 
     private var expandedPercentageFactor: Float = 0f
 
+    private var maximumImageScroll: Float = 0f
+
     init {
         initAttributes()
         attrs?.let { initCustomAttributes(it) }
@@ -62,6 +62,9 @@ class ProfileImageBehavior constructor(
             array.getDimen(R.styleable.AvatarImageBehavior_startToolbarPosition)
         startHeightCustom = array.getDimen(R.styleable.AvatarImageBehavior_startHeight)
         endHeightCustom = array.getDimen(R.styleable.AvatarImageBehavior_finalHeight)
+        maximumImageScroll =
+            array.getInteger(R.styleable.AvatarImageBehavior_maximumImageScroll, 0).toFloat()
+
         array.recycle()
     }
 
@@ -99,7 +102,8 @@ class ProfileImageBehavior constructor(
             ((positionYStart - positionYEnd) * (1f - expandedPercentageFactor)) + child.height / 2
 
         child.x = positionXStart - distanceXToSubtract
-        child.y = positionYStart - distanceYToSubtract
+        child.y = positionYStart - min(maximumImageScroll, distanceYToSubtract)
+
         val heightToSubtract = (startHeight - endHeightCustom) * heightFactor
 
         val layoutParams = child.coordinatorLayoutParams()
@@ -145,7 +149,10 @@ class ProfileImageBehavior constructor(
         if (isCollapsed()) showViews(textView)
             .also { hideViews(nameTextView, jobDescriptionTextView) }
             .also { enableBgOnViews(toolbar) }
-            .also { collapsingToolbar.background = ContextCompat.getDrawable(context, R.drawable.circular_progress_bar) }
+            .also {
+                collapsingToolbar.background =
+                    ContextCompat.getDrawable(context, R.drawable.circular_progress_bar)
+            }
         else hideViews(textView)
             .also { showViews(nameTextView, jobDescriptionTextView, collapsingToolbar) }
             .also { enableBgOnViews(collapsingToolbar) }

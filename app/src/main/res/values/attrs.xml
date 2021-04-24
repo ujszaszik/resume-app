@@ -6,6 +6,7 @@
         <attr name="startToolbarPosition" format="dimension" />
         <attr name="startHeight" format="dimension" />
         <attr name="finalHeight" format="dimension" />
+        <attr name="maximumImageScroll" format="integer"/>
     </declare-styleable>
 
     <declare-styleable name="SkillRow">
