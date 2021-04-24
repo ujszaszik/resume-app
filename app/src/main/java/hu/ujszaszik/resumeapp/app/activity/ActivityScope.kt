@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.app
+package hu.ujszaszik.resumeapp.app.activity
 
 import javax.inject.Scope
 

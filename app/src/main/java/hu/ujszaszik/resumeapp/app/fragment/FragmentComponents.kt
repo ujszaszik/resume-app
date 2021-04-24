@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.app
+package hu.ujszaszik.resumeapp.app.fragment
 
 import dagger.Subcomponent
 import dagger.android.AndroidInjector

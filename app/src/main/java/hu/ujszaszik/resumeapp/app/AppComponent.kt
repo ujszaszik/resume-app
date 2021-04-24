@@ -4,9 +4,11 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import hu.ujszaszik.resumeapp.app.activity.ActivityModule
+import hu.ujszaszik.resumeapp.app.fragment.FragmentModule
+import hu.ujszaszik.resumeapp.app.viewmodel.ViewModelModule
 import hu.ujszaszik.resumeapp.login.repository.LoginModule
 import hu.ujszaszik.resumeapp.resume.repository.RepositoryModule
-import hu.ujszaszik.resumeapp.resume.ViewModelModule
 import javax.inject.Singleton
 
 @Component(

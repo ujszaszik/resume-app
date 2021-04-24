@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.app
+package hu.ujszaszik.resumeapp.app.activity
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
