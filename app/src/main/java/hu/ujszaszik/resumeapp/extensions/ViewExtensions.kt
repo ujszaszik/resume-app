@@ -17,7 +17,9 @@ import de.hdodenhof.circleimageview.CircleImageView
 import hu.ujszaszik.resumeapp.resume.ResumeActivity
 import hu.ujszaszik.resumeapp.resume.ResumeViewModel
 
-fun TypedArray.getDimen(dimenId: Int): Float = getDimension(dimenId, 0F)
+fun TypedArray.getDimen(dimenId: Int): Float = getDimension(dimenId, zero().toFloat())
+
+fun TypedArray.getInt(intId: Int): Int = getInt(intId, zero())
 
 fun Context.getPixelOffset(id: Int): Int = resources.getDimensionPixelOffset(id)
 

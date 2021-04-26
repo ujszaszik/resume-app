@@ -5,6 +5,6 @@
     <integer name="delay_before_quit">1000</integer>
     <integer name="error_animation_duration">500</integer>
     <integer name="error_stroke_width">6</integer>
-    <integer name="profile_image_max_scroll">250</integer>
+    <integer name="profile_image_min_size">48</integer>
     <integer name="password_min_length">6</integer>
 </resources>

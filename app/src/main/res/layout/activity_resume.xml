@@ -132,7 +132,7 @@
                 app:finalHeight="@dimen/profile_image_width_final"
                 app:finalYPosition="@dimen/circle_image_view_default_pixel"
                 app:layout_behavior="hu.ujszaszik.resumeapp.resume.ProfileImageBehavior"
-                app:maximumImageScroll="@integer/profile_image_max_scroll"
+                app:minimumImageHeight="@integer/profile_image_min_size"
                 app:startHeight="@dimen/circle_image_view_default_pixel"
                 app:startToolbarPosition="@dimen/circle_image_view_default_pixel"
                 app:startXPosition="@dimen/circle_image_view_default_pixel" />

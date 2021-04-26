@@ -10,7 +10,6 @@ import com.google.android.material.appbar.AppBarLayout
 import com.ujszaszik.resumeapp.R
 import de.hdodenhof.circleimageview.CircleImageView
 import hu.ujszaszik.resumeapp.extensions.*
-import kotlin.math.min
 
 
 class ProfileImageBehavior constructor(
@@ -39,7 +38,7 @@ class ProfileImageBehavior constructor(
 
     private var expandedPercentageFactor: Float = 0f
 
-    private var maximumImageScroll: Float = 0f
+    private var minimumImageHeight: Int = 0
 
     init {
         initAttributes()
@@ -52,18 +51,15 @@ class ProfileImageBehavior constructor(
     }
 
     private fun initCustomAttributes(attrs: AttributeSet) {
-        val array = context.obtainStyledAttributes(
-            attrs,
-            R.styleable.AvatarImageBehavior
-        )
+        val array =
+            context.obtainStyledAttributes(attrs, R.styleable.AvatarImageBehavior)
         positionYEndCustom = array.getDimen(R.styleable.AvatarImageBehavior_finalYPosition)
         positionXStartCustom = array.getDimen(R.styleable.AvatarImageBehavior_startXPosition)
         positionToolbarStartCustom =
             array.getDimen(R.styleable.AvatarImageBehavior_startToolbarPosition)
         startHeightCustom = array.getDimen(R.styleable.AvatarImageBehavior_startHeight)
         endHeightCustom = array.getDimen(R.styleable.AvatarImageBehavior_finalHeight)
-        maximumImageScroll =
-            array.getInteger(R.styleable.AvatarImageBehavior_maximumImageScroll, 0).toFloat()
+        minimumImageHeight = array.getInt(R.styleable.AvatarImageBehavior_minimumImageHeight)
 
         array.recycle()
     }
@@ -97,12 +93,15 @@ class ProfileImageBehavior constructor(
         val heightFactor =
             (changeBehaviorPoint - expandedPercentageFactor) / changeBehaviorPoint
         val distanceXToSubtract =
-            ((positionXStart - positionXEnd) * heightFactor) + child.height / 2
+            ((positionXStart - positionXEnd) * heightFactor) + child.height.half()
+
+        val imageHeight = if (isCollapsed()) minimumImageHeight else child.height.half()
+
         val distanceYToSubtract =
-            ((positionYStart - positionYEnd) * (1f - expandedPercentageFactor)) + child.height / 2
+            ((positionYStart - positionYEnd) * (1f - expandedPercentageFactor)) + imageHeight
 
         child.x = positionXStart - distanceXToSubtract
-        child.y = positionYStart - min(maximumImageScroll, distanceYToSubtract)
+        child.y = positionYStart - distanceYToSubtract
 
         val heightToSubtract = (startHeight - endHeightCustom) * heightFactor
 
@@ -114,9 +113,9 @@ class ProfileImageBehavior constructor(
 
     private fun doImageVerticalMove(child: CircleImageView) {
         val distanceYToSubtract =
-            ((positionYStart - positionYEnd) * (1f - expandedPercentageFactor)) + startHeight / 2
+            ((positionYStart - positionYEnd) * (1f - expandedPercentageFactor)) + startHeight.half()
 
-        child.x = positionXStart - child.width / 2.toFloat()
+        child.x = positionXStart - (child.width / 2.toFloat())
         child.y = positionYStart - distanceYToSubtract
 
         val layoutParams = child.coordinatorLayoutParams()
@@ -127,11 +126,12 @@ class ProfileImageBehavior constructor(
 
     private fun calculateUnsetProperties(child: CircleImageView, dependency: View) {
         if (positionYStart == 0) positionYStart = dependency.y.toInt()
-        if (positionYEnd == 0) positionYEnd = dependency.height / 2
+        if (positionYEnd == 0) positionYEnd = dependency.height.half()
         if (startHeight == 0) startHeight = child.height
-        if (positionXStart == 0) positionXStart = (child.x + child.width / 2).toInt()
+        if (positionXStart == 0) positionXStart = (child.x + child.width.half()).toInt()
         if (positionXEnd == 0) positionXEnd =
-            context.getPixelOffset(R.dimen.abc_action_bar_content_inset_material) + endHeightCustom.toInt() / 2
+            context.getPixelOffset(R.dimen.abc_action_bar_content_inset_material) + endHeightCustom.toInt()
+                .half()
         if (positionToolbarStart == 0f) positionToolbarStart = dependency.y
         if (changeBehaviorPoint == 0f) {
             changeBehaviorPoint =
@@ -159,6 +159,6 @@ class ProfileImageBehavior constructor(
             .also { disableBgOnViews(toolbar) }
     }
 
-    private fun isCollapsed(): Boolean = expandedPercentageFactor.toDouble() == 0.0
+    private fun isCollapsed(): Boolean = expandedPercentageFactor == zero().toFloat()
 
 }
