@@ -6,7 +6,7 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url "https://maven.java.net/content/groups/public/" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
@@ -22,7 +22,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 

@@ -49,6 +49,19 @@ ext {
             firebaseStorage    : 'com.google.firebase:firebase-storage-ktx'
     ]
 
+    composeLibs = [
+            compuseUi             : "androidx.compose.ui:ui:$version_compose",
+            foundation            : "androidx.compose.foundation:foundation:$version_compose",
+            integrationActivity   : "androidx.activity:activity-compose:$version_compose_activity",
+            integrationViewModel  : "androidx.lifecycle:lifecycle-viewmodel-compose:$version_compose_viewmodel",
+            integrationLiveData   : "androidx.compose.runtime:runtime-livedata:$version_compose",
+            integrationRx         : "androidx.compose.runtime:runtime-rxjava2:$version_compose",
+            materialDesign        : "androidx.compose.material:material:$version_compose",
+            materialDesignIcons   : "androidx.compose.material:material-icons-core:$version_compose",
+            materialDesignIconsExt: "androidx.compose.material:material-icons-extended:$version_compose",
+            toolingSupport        : "androidx.compose.ui:ui-tooling:$version_compose"
+    ]
+
     javaMailLibs = [
             mail          : "com.sun.mail:android-mail:$version_java_mail",
             mailActivation: "com.sun.mail:android-activation:$version_java_mail"

@@ -12,7 +12,7 @@ android {
         ReleaseSignConfig {}
     }
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "hu.ujszaszik.resumeapp"
@@ -22,6 +22,10 @@ android {
         versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -38,15 +42,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
+        useIR = true
         freeCompilerArgs = ["-Xinline-classes"]
     }
     buildFeatures {
         dataBinding true
+        compose true
     }
     externalNativeBuild {
         cmake {
@@ -55,6 +61,10 @@ android {
     }
     packagingOptions {
         pickFirst 'META-INF/LICENSE.txt'
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion version_compose
+        kotlinCompilerVersion version_kotlin
     }
 }
 
@@ -74,6 +84,7 @@ dependencies {
     implementation androidCoreLibs.values()
     implementation navigationLibs.values()
     implementation externalLibs.values()
+    implementation composeLibs.values()
 
     implementation daggerLibs.values()
     kapt daggerKaptLibs.values()
