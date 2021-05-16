@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/overviewFragment"
         android:name="hu.ujszaszik.resumeapp.resume.overview.OverviewFragment"
-        android:label="framgent_overview" />
+        android:label="fragment_overview" />
     <fragment
         android:id="@+id/skillsFragment"
         android:name="hu.ujszaszik.resumeapp.resume.skills.SkillsFragment"

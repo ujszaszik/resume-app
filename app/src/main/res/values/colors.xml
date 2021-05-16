@@ -9,6 +9,7 @@
     <color name="blue_link">#0645AD</color>
     <color name="green">#228B22</color>
     <color name="light_grey">#787878</color>
+    <color name="dark_grey">#444444</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
