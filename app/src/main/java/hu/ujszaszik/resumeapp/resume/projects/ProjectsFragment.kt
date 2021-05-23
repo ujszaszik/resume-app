@@ -1,38 +1,40 @@
 package hu.ujszaszik.resumeapp.resume.projects
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import com.ujszaszik.resumeapp.databinding.FragmentProjectsBinding
 import hu.ujszaszik.resumeapp.extensions.getSharedViewModel
 import hu.ujszaszik.resumeapp.extensions.resetScrollView
 import hu.ujszaszik.resumeapp.resume.ResumeViewModel
-import hu.ujszaszik.resumeapp.resume.projects.adapter.ProjectsAdapter
+import hu.ujszaszik.resumeapp.resume.projects.ui.ProjectsScreen
 
 class ProjectsFragment : Fragment() {
-
-    private lateinit var binding: FragmentProjectsBinding
-
     private lateinit var viewModel: ResumeViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        viewModel = getSharedViewModel()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = getSharedViewModel()
-        binding = FragmentProjectsBinding.inflate(layoutInflater)
-        resetScrollView()
-        observeProjects()
-        return binding.root
-    }
-
-    private fun observeProjects() {
-        viewModel.projects.observe(viewLifecycleOwner) {
-            binding.experienceRecyclerView.adapter = ProjectsAdapter().apply {
-                submitList(it)
+        return ComposeView(requireContext()).apply {
+            setContent {
+                val projects = viewModel.projects.observeAsState()
+                projects.value?.let { ProjectsScreen(it) }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        resetScrollView()
     }
 }

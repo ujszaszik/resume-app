@@ -35,4 +35,4 @@
 -keep class hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
 -keep class hu.ujszaszik.resumeapp.resume.personal.language.LanguageData
 -keep class hu.ujszaszik.resumeapp.resume.personal.personality.PersonalityData
--keep class hu.ujszaszik.resumeapp.resume.projects.ProjectData
+-keep class hu.ujszaszik.resumeapp.resume.projects.model.ProjectData
