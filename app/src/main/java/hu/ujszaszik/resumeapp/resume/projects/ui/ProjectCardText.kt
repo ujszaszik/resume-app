@@ -24,7 +24,7 @@ fun ProjectCardText(
         text = text,
         fontSize = fontSize,
         color = colorResource(id = colorId),
-        style = style.toComposeStyle()
+        style = style.composeStyle
     )
 }
 
