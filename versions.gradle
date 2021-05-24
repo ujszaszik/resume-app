@@ -28,6 +28,9 @@ ext {
     version_compose_activity = "1.3.0-alpha03"
     version_compose_viewmodel = "1.0.0-alpha02"
 
+    //COMPOSE EXTERNAL
+    version_compose_ratingbar = '1.0.5'
+
     // EXTERNAL
     version_balloon = "1.3.4"
     version_circle_image_view = '1.3.0'

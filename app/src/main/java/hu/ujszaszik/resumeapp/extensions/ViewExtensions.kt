@@ -84,3 +84,10 @@ fun enableBgOnViews(vararg views: View) {
 fun disableBgOnViews(vararg views: View) {
     views.forEach { it.background = null }
 }
+
+fun Context.getImageIdByName(imageName: String): Int {
+    return resources.getIdentifier(
+        imageName, "drawable",
+        packageName
+    )
+}

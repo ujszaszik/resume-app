@@ -31,7 +31,7 @@
 
 #KEEP SERIALIZABLE MODEL CLASSES
 -keep class hu.ujszaszik.resumeapp.resume.overview.model.ContactData
--keep class hu.ujszaszik.resumeapp.resume.skills.SkillData
+-keep class hu.ujszaszik.resumeapp.resume.skills.model.SkillData
 -keep class hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
 -keep class hu.ujszaszik.resumeapp.resume.personal.language.LanguageData
 -keep class hu.ujszaszik.resumeapp.resume.personal.personality.PersonalityData

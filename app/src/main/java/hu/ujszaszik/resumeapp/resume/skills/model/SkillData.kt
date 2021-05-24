@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.resume.skills
+package hu.ujszaszik.resumeapp.resume.skills.model
 
 import androidx.annotation.Keep
 import kotlinx.serialization.Serializable

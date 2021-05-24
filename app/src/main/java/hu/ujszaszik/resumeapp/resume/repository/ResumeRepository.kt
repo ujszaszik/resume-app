@@ -6,7 +6,7 @@ import hu.ujszaszik.resumeapp.resume.personal.language.LanguageData
 import hu.ujszaszik.resumeapp.resume.personal.personality.PersonalityData
 import hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
 import hu.ujszaszik.resumeapp.resume.projects.model.ProjectData
-import hu.ujszaszik.resumeapp.resume.skills.SkillData
+import hu.ujszaszik.resumeapp.resume.skills.model.SkillData
 import io.reactivex.rxjava3.subjects.PublishSubject
 import javax.inject.Inject
 import javax.inject.Singleton
