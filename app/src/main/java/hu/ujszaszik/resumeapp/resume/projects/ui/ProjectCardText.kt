@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ujszaszik.resumeapp.R
-import hu.ujszaszik.resumeapp.compose.text.TextStyles
+import hu.ujszaszik.resumeapp.compose.view.text.TextStyles
 
 @Composable
 fun ProjectCardText(

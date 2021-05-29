@@ -10,7 +10,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ujszaszik.resumeapp.R
-import hu.ujszaszik.resumeapp.compose.text.TextStyles
+import hu.ujszaszik.resumeapp.compose.view.text.TextStyles
 import hu.ujszaszik.resumeapp.resume.projects.model.ProjectData
 import hu.ujszaszik.resumeapp.resume.projects.model.descriptionPair
 import hu.ujszaszik.resumeapp.resume.projects.model.rolesPair

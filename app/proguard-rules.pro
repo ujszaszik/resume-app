@@ -33,6 +33,6 @@
 -keep class hu.ujszaszik.resumeapp.resume.overview.model.ContactData
 -keep class hu.ujszaszik.resumeapp.resume.skills.model.SkillData
 -keep class hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
--keep class hu.ujszaszik.resumeapp.resume.personal.language.LanguageData
--keep class hu.ujszaszik.resumeapp.resume.personal.personality.PersonalityData
+-keep class hu.ujszaszik.resumeapp.resume.personal.language.model.LanguageData
+-keep class hu.ujszaszik.resumeapp.resume.personal.personality.model.PersonalityData
 -keep class hu.ujszaszik.resumeapp.resume.projects.model.ProjectData

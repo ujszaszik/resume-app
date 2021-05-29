@@ -128,5 +128,8 @@
     <dimen name="verification_button_width">240dp</dimen>
     <dimen name="login_progress_bar_size">96dp</dimen>
 
+    <!--    RATING BAR-->
+    <dimen name="skills_rating_size">36dp</dimen>
+    <dimen name="language_rating_size">18dp</dimen>
 
 </resources>

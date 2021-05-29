@@ -7,9 +7,10 @@ import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import hu.ujszaszik.resumeapp.compose.view.CenteredColumn
-import hu.ujszaszik.resumeapp.compose.view.CenteredRow
-import hu.ujszaszik.resumeapp.compose.view.ImageView
+import com.ujszaszik.resumeapp.R
+import hu.ujszaszik.resumeapp.compose.view.image.ImageView
+import hu.ujszaszik.resumeapp.compose.view.layout.CenteredColumn
+import hu.ujszaszik.resumeapp.compose.view.layout.CenteredRow
 import hu.ujszaszik.resumeapp.extensions.getImageIdByName
 import hu.ujszaszik.resumeapp.resume.skills.model.SkillData
 
@@ -35,6 +36,6 @@ fun SkillCard(content: @Composable () -> Unit) {
 @Composable
 fun SkillIcon(context: Context, imageName: String) {
     CenteredColumn(modifier = Modifier.padding(start = 16.dp)) {
-        ImageView(context.getImageIdByName(imageName), 64.dp)
+        ImageView(context.getImageIdByName(imageName), R.dimen.default_image_size)
     }
 }

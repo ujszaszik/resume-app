@@ -1,16 +1,11 @@
-package hu.ujszaszik.resumeapp.compose.view
+package hu.ujszaszik.resumeapp.compose.view.layout
 
-import androidx.annotation.DrawableRes
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
 
 @Composable
 fun CenteredRow(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
@@ -28,13 +23,4 @@ fun CenteredColumn(modifier: Modifier = Modifier, content: @Composable () -> Uni
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) { content.invoke() }
-}
-
-@Composable
-fun ImageView(@DrawableRes resId: Int, size: Dp) {
-    Image(
-        painter = painterResource(resId),
-        contentDescription = "",
-        modifier = Modifier.size(size)
-    )
 }

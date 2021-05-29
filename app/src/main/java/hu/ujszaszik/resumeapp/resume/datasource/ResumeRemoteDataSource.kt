@@ -3,8 +3,8 @@ package hu.ujszaszik.resumeapp.resume.datasource
 import com.google.firebase.database.DatabaseReference
 import hu.ujszaszik.resumeapp.extensions.fetchValues
 import hu.ujszaszik.resumeapp.resume.overview.model.ContactData
-import hu.ujszaszik.resumeapp.resume.personal.language.LanguageData
-import hu.ujszaszik.resumeapp.resume.personal.personality.PersonalityData
+import hu.ujszaszik.resumeapp.resume.personal.language.model.LanguageData
+import hu.ujszaszik.resumeapp.resume.personal.personality.model.PersonalityData
 import hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
 import hu.ujszaszik.resumeapp.resume.projects.model.ProjectData
 import hu.ujszaszik.resumeapp.resume.repository.*

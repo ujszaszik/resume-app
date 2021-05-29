@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.resume.personal.personality
+package hu.ujszaszik.resumeapp.resume.personal.personality.model
 
 import androidx.annotation.Keep
 import kotlinx.serialization.Serializable
