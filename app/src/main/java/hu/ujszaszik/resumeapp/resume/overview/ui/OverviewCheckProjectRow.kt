@@ -1,54 +1,40 @@
 package hu.ujszaszik.resumeapp.resume.overview.ui
 
 import android.app.Activity
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ujszaszik.resumeapp.R
+import hu.ujszaszik.resumeapp.compose.view.layout.Heights
+import hu.ujszaszik.resumeapp.compose.view.layout.Line
+import hu.ujszaszik.resumeapp.compose.view.layout.Widths
+import hu.ujszaszik.resumeapp.compose.view.text.TextStyles
+import hu.ujszaszik.resumeapp.compose.view.text.TextView
 import hu.ujszaszik.resumeapp.general.browser.BrowserAction
 
 private val checkProjectAction: (Activity) -> Unit = {
     BrowserAction().execute(it, it.getString(R.string.app_link))
 }
 
-private val checkProjectRowStyle: (Activity) -> Modifier = {
-    Modifier
-        .padding(40.dp)
-        .wrapContentHeight()
-        .clickable(
-            interactionSource = MutableInteractionSource(),
-            indication = null,
-            onClick = { checkProjectAction(it) })
-}
-
 @Composable
 fun OverviewCheckProjectRow(activity: Activity) {
-    Row(modifier = checkProjectRowStyle(activity)) {
-        OverviewCheckProjectAtGithubText()
-    }
+    Line(
+        marginTop = R.dimen.margin_heavy,
+        marginBottom = R.dimen.margin_tiny,
+        marginStart = R.dimen.margin_tiny,
+        marginEnd = R.dimen.margin_tiny,
+        layoutHeight = Heights.WRAP_CONTENT,
+        layoutWidth = Widths.MATCH_PARENT,
+        onClick = { checkProjectAction.invoke(activity) }
+    ) { OverviewCheckProjectAtGithubText() }
 }
 
 @Composable
 fun OverviewCheckProjectAtGithubText() {
-    Text(
-        modifier = Modifier.fillMaxWidth(),
-        text = stringResource(R.string.label_check_this_project),
-        color = colorResource(R.color.blue_link),
-        fontSize = 15.sp,
+    TextView(
+        text = R.string.label_check_this_project,
+        textColor = R.color.blue_link,
+        textSize = R.dimen.normal_text_size,
         textAlign = TextAlign.Center,
-        style = TextStyle(textDecoration = TextDecoration.Underline)
+        textStyle = TextStyles.UNDERLINE,
     )
 }

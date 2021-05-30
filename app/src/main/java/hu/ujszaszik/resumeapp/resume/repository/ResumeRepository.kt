@@ -4,7 +4,7 @@ import hu.ujszaszik.resumeapp.resume.datasource.ResumeRemoteDataSource
 import hu.ujszaszik.resumeapp.resume.overview.model.ContactData
 import hu.ujszaszik.resumeapp.resume.personal.language.model.LanguageData
 import hu.ujszaszik.resumeapp.resume.personal.personality.model.PersonalityData
-import hu.ujszaszik.resumeapp.resume.personal.quotes.QuoteData
+import hu.ujszaszik.resumeapp.resume.personal.quotes.model.QuoteData
 import hu.ujszaszik.resumeapp.resume.projects.model.ProjectData
 import hu.ujszaszik.resumeapp.resume.skills.model.SkillData
 import io.reactivex.rxjava3.subjects.PublishSubject

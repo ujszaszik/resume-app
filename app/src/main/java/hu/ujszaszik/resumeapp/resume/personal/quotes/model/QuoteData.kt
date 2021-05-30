@@ -1,4 +1,4 @@
-package hu.ujszaszik.resumeapp.resume.personal.quotes
+package hu.ujszaszik.resumeapp.resume.personal.quotes.model
 
 import androidx.annotation.Keep
 import kotlinx.serialization.Serializable

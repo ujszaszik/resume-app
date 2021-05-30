@@ -8,7 +8,7 @@ import hu.ujszaszik.resumeapp.compose.view.layout.Widths
 @Composable
 fun ProfileContentRow(content: @Composable () -> Unit) {
     Line(
-        width = Widths.MATCH_PARENT,
+        layoutWidth = Widths.INTRINSIC_MAX,
         marginTop = R.dimen.margin_big,
         marginBottom = R.dimen.margin_default,
         marginStart = R.dimen.margin_default,

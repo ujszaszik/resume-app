@@ -87,6 +87,7 @@ dependencies {
     implementation composeLibs.values()
 
     implementation daggerLibs.values()
+    implementation 'com.google.android.gms:play-services-tagmanager-v4-impl:17.0.0'
     kapt daggerKaptLibs.values()
 
     implementation firebaseLibs.values()

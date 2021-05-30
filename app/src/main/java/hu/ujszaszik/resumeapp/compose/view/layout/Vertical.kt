@@ -1,26 +1,25 @@
 package hu.ujszaszik.resumeapp.compose.view.layout
 
 import androidx.annotation.DimenRes
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import hu.ujszaszik.resumeapp.compose.view.text.safeDimenResource
 
 @Composable
-fun Line(
+fun Vertical(
     @DimenRes marginStart: Int = 0,
     @DimenRes marginEnd: Int = 0,
     @DimenRes marginTop: Int = 0,
     @DimenRes marginBottom: Int = 0,
-    layoutWidth: Widths = Widths.MATCH_PARENT,
-    layoutHeight: Heights = Heights.MATCH_PARENT,
-    onClick: () -> Unit = {},
+    @DimenRes height: Int = 0,
+    intrinsicSize: IntrinsicSize = IntrinsicSize.Max,
+    verticalArrangement: Arrangement.Vertical = Arrangement.Top,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
     content: @Composable () -> Unit
 ) {
-    Row(
+    Column(
         modifier = Modifier
             .padding(
                 start = safeDimenResource(marginStart),
@@ -28,11 +27,17 @@ fun Line(
                 top = safeDimenResource(marginTop),
                 bottom = safeDimenResource(marginBottom)
             )
-            .layoutWidth(layoutWidth)
-            .layoutHeight(layoutHeight)
-            .clickable(
-                interactionSource = MutableInteractionSource(),
-                indication = null,
-                onClick = { onClick.invoke() })
+            .verticalHeight(height, intrinsicSize),
+        verticalArrangement = verticalArrangement,
+        horizontalAlignment = horizontalAlignment
     ) { content.invoke() }
+}
+
+@Composable
+fun Modifier.verticalHeight(
+    @DimenRes height: Int = 0,
+    intrinsicSize: IntrinsicSize = IntrinsicSize.Max
+): Modifier {
+    return if (height != 0) apply { height(safeDimenResource(height)) }
+    else apply { height(intrinsicSize) }
 }

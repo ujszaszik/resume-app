@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import com.ujszaszik.resumeapp.R
 import hu.ujszaszik.resumeapp.compose.view.text.TextStyles
 import hu.ujszaszik.resumeapp.compose.view.text.TextView
+import hu.ujszaszik.resumeapp.extensions.asQuote
 
 @Composable
 fun ProfileHeaderText(@StringRes textId: Int) {
@@ -41,5 +42,18 @@ fun ProfileRowDescriptionText(description: String) {
         marginTop = R.dimen.margin_minimum,
         textColor = R.color.dark_grey,
         textSize = R.dimen.normal_text_size,
+    )
+}
+
+@Composable
+fun ProfileRowQuoteText(quoteText: String) {
+    TextView(
+        content = quoteText.asQuote,
+        marginStart = R.dimen.margin_extended,
+        marginEnd = R.dimen.margin_default,
+        marginTop = R.dimen.margin_minimum,
+        textColor = R.color.dark_grey,
+        textSize = R.dimen.normal_text_size,
+        textStyle = TextStyles.ITALIC
     )
 }
