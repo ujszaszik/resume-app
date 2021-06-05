@@ -75,6 +75,8 @@
     <dimen name="overview_layout_horizontal_margin">30dp</dimen>
     <dimen name="overview_layout_top_margin">30dp</dimen>
     <dimen name="overview_layout_delimiter_height">1dp</dimen>
+    <dimen name="overview_arrow_icon_size">70dp</dimen>
+
 
     <!--    PLACEHOLDER -->
     <dimen name="login_placeholder_height">36dp</dimen>

@@ -1,76 +1,53 @@
 package hu.ujszaszik.resumeapp.resume.overview.ui
 
-import android.annotation.SuppressLint
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowForward
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ujszaszik.resumeapp.R
+import hu.ujszaszik.resumeapp.compose.view.frame.Frame
+import hu.ujszaszik.resumeapp.compose.view.image.IconView
+import hu.ujszaszik.resumeapp.compose.view.layout.Heights
+import hu.ujszaszik.resumeapp.compose.view.layout.PositionedVertical
+import hu.ujszaszik.resumeapp.compose.view.layout.Vertical
+import hu.ujszaszik.resumeapp.compose.view.layout.Widths
+import hu.ujszaszik.resumeapp.compose.view.text.TextView
 import hu.ujszaszik.resumeapp.resume.overview.model.ContactData
-
-@SuppressLint("ModifierFactoryExtensionFunction")
-private fun overviewRowStyle(
-    contactData: ContactData,
-    listener: (ContactData) -> Unit
-): Modifier {
-    return Modifier
-        .clickable(
-            interactionSource = MutableInteractionSource(),
-            indication = null,
-            onClick = { listener.invoke(contactData) })
-        .fillMaxHeight()
-}
 
 @Composable
 fun OverviewRow(contactData: ContactData, listener: (ContactData) -> Unit) {
-    Box(overviewRowStyle(contactData, listener)) {
-        OverviewText(contactData)
-        OverviewIconView()
+    Frame(
+        height = Heights.MATCH_PARENT,
+        onClick = { listener.invoke(contactData) }
+    ) {
+        Vertical(
+            marginStart = R.dimen.overview_layout_horizontal_margin,
+            marginEnd = R.dimen.overview_layout_horizontal_margin,
+            marginTop = R.dimen.overview_layout_top_margin,
+            width = Widths.MATCH_PARENT
+        ) {
+            TextView(
+                content = contactData.title,
+                textColor = R.color.headings,
+                textSize = R.dimen.overview_key_text_size
+            )
+            TextView(
+                content = contactData.value,
+                textColor = R.color.dark_grey,
+                textSize = R.dimen.overview_value_text_size
+            )
+        }
+        PositionedVertical(
+            verticalArrangement = Arrangement.Bottom,
+            horizontalAlignment = Alignment.End,
+            height = R.dimen.overview_arrow_icon_size
+        ) {
+            IconView(
+                resId = R.drawable.ic_arrow,
+                tint = R.color.blue_link,
+                height = Heights.WRAP_CONTENT,
+                width = Widths.WRAP_CONTENT,
+                marginEnd = R.dimen.overview_layout_horizontal_margin
+            )
+        }
     }
-}
-
-private val overviewTextStyle =
-    Modifier
-        .fillMaxWidth()
-        .padding(start = 30.dp, end = 30.dp, top = 30.dp)
-
-@Composable
-fun OverviewText(contactData: ContactData) {
-    Column(overviewTextStyle) {
-        Text(text = contactData.title, color = colorResource(R.color.headings), fontSize = 13.sp)
-        Text(text = contactData.value, color = colorResource(R.color.dark_grey), fontSize = 18.sp)
-    }
-}
-
-private val overviewIconStyle =
-    Modifier
-        .height(70.dp)
-        .fillMaxWidth()
-        .padding(end = 30.dp)
-
-@Composable
-fun OverviewIconView() {
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.End,
-        modifier = overviewIconStyle
-    ) { OverviewIcon() }
-}
-
-@Composable
-fun OverviewIcon() {
-    Icon(
-        imageVector = Icons.Rounded.ArrowForward,
-        tint = colorResource(id = R.color.blue_link),
-        contentDescription = ""
-    )
 }

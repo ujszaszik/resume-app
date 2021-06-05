@@ -14,6 +14,7 @@ fun Vertical(
     @DimenRes marginTop: Int = 0,
     @DimenRes marginBottom: Int = 0,
     @DimenRes height: Int = 0,
+    width: Widths = Widths.MATCH_PARENT,
     intrinsicSize: IntrinsicSize = IntrinsicSize.Max,
     verticalArrangement: Arrangement.Vertical = Arrangement.Top,
     horizontalAlignment: Alignment.Horizontal = Alignment.Start,
@@ -27,10 +28,30 @@ fun Vertical(
                 top = safeDimenResource(marginTop),
                 bottom = safeDimenResource(marginBottom)
             )
+            .layoutWidth(width)
             .verticalHeight(height, intrinsicSize),
         verticalArrangement = verticalArrangement,
         horizontalAlignment = horizontalAlignment
     ) { content.invoke() }
+}
+
+@Composable
+fun PositionedVertical(
+    verticalArrangement: Arrangement.Vertical,
+    horizontalAlignment: Alignment.Horizontal,
+    @DimenRes height: Int,
+    width: Widths = Widths.MATCH_PARENT,
+    content: @Composable () -> Unit
+) {
+    Column(
+        verticalArrangement = verticalArrangement,
+        horizontalAlignment = horizontalAlignment,
+        modifier = Modifier
+            .height(safeDimenResource(height))
+            .fillMaxWidth()
+    ) {
+        content.invoke()
+    }
 }
 
 @Composable
