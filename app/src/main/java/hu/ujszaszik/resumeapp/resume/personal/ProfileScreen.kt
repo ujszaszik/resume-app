@@ -1,6 +1,5 @@
 package hu.ujszaszik.resumeapp.resume.personal
 
-import android.content.Context
 import androidx.compose.runtime.Composable
 import com.ujszaszik.resumeapp.R
 import hu.ujszaszik.resumeapp.compose.view.layout.Vertical
@@ -13,32 +12,31 @@ import hu.ujszaszik.resumeapp.resume.personal.quotes.ui.QuoteCard
 
 @Composable
 fun ProfileScreen(
-    context: Context,
     languages: List<LanguageData>?,
     remarks: List<PersonalityData>?,
     quotes: List<QuoteData>?
 ) {
     Vertical(marginBottom = R.dimen.bottom_navigation_view_height) {
-        languages?.let { LanguageContent(context, it) }
-        remarks?.let { PersonalityContent(context, it) }
-        quotes?.let { QuoteContent(context, it) }
+        languages?.let { LanguageContent(it) }
+        remarks?.let { PersonalityContent(it) }
+        quotes?.let { QuoteContent(it) }
     }
 }
 
 @Composable
-fun LanguageContent(context: Context, languages: List<LanguageData>) {
+fun LanguageContent(languages: List<LanguageData>) {
     ProfileHeaderText(R.string.profile_label_languages)
-    LanguageCard(context, languages)
+    LanguageCard(languages)
 }
 
 @Composable
-fun PersonalityContent(context: Context, remarks: List<PersonalityData>) {
+fun PersonalityContent(remarks: List<PersonalityData>) {
     ProfileHeaderText(R.string.profile_label_personality)
-    PersonalityCard(context, remarks)
+    PersonalityCard(remarks)
 }
 
 @Composable
-fun QuoteContent(context: Context, quotes: List<QuoteData>) {
+fun QuoteContent(quotes: List<QuoteData>) {
     ProfileHeaderText(R.string.profile_label_quotes)
-    QuoteCard(context, quotes)
+    QuoteCard(quotes)
 }

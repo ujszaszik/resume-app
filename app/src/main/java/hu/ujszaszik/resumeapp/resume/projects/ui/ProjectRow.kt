@@ -51,8 +51,8 @@ fun ProjectCardContent(project: ProjectData) {
         ProjectCardText(text = project.name, 18.sp, R.color.headings, TextStyles.BOLD)
         ProjectCardText(text = project.title, 16.sp, R.color.dark_grey, TextStyles.BOLD)
         ProjectCardText(text = project.date, style = TextStyles.ITALIC)
-        ProjectCardTextPair(textPair = project.descriptionPair)
-        ProjectCardTextPair(textPair = project.rolesPair)
-        ProjectCardTextPair(textPair = project.technologiesPair)
+        ProjectCardTextPair(project.descriptionPair)
+        ProjectCardTextPair(project.rolesPair)
+        ProjectCardTextPair(project.technologiesPair)
     }
 }

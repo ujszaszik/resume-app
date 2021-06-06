@@ -1,27 +1,27 @@
 package hu.ujszaszik.resumeapp.resume.overview.ui
 
-import android.app.Activity
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import com.ujszaszik.resumeapp.R
-import hu.ujszaszik.resumeapp.compose.view.layout.Vertical
 import hu.ujszaszik.resumeapp.compose.view.separator.Separator
 import hu.ujszaszik.resumeapp.general.ContactActionType
-import hu.ujszaszik.resumeapp.resume.ResumeViewModel
 import hu.ujszaszik.resumeapp.resume.overview.model.ContactData
 
 @Composable
-fun OverviewScreen(viewModel: ResumeViewModel, activity: Activity) {
+fun OverviewScreen() {
+    val viewModel = LocalViewModel.current
     val overviewList = viewModel.contacts.observeAsState(listOf())
-    Vertical(horizontalAlignment = Alignment.CenterHorizontally) {
-        OverviewList(overviewList.value, activity)
-        OverviewCheckProjectRow(activity)
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        OverviewList(overviewList.value)
+        OverviewCheckProjectRow(LocalActivity.current)
     }
 }
 
 @Composable
-fun OverviewList(contactsList: List<ContactData>, activity: Activity) {
+fun OverviewList(contactsList: List<ContactData>) {
+    val activity = LocalActivity.current
     contactsList.forEach {
         val action = ContactActionType.getByName(activity, it.title)
         val listener: (ContactData) -> Unit = { data -> action.execute(activity, data.value) }
